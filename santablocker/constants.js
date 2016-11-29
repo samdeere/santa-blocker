@@ -41,4 +41,4 @@ var naughtyList = [
     'and'
 ]
 
-var naughtListRegex = new RegExt(naughtyList.join('|'), 'i')
+var naughtListRegex = new RegExp(naughtyList.join('|'), 'i')

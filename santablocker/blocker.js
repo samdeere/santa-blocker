@@ -11,12 +11,16 @@ $(document).ready(function(){
 
 function initialize(){
     console.log("initialized");
-    var text = nativeSelector();
-
-}
-
-function hasChristmasContent(){
-    //regex check on the 
+    var pageText = nativeSelector().toString();
+    var hasChristmasContent = pageText.match(christmasListRegex);
+    console.log("christmas content -" + hasChristmasContent);
+    if(hasChristmasContent){
+        var hasNaughtyListContent = pageText.match(naughtListRegex);
+        console.log("naught list content - " + hasNaughtyListContent);
+        if(hasNaughtyListContent){
+            console.log("loading child lock");
+        }
+    }
 }
 
 function nativeSelector() {
