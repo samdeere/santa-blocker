@@ -1,15 +1,19 @@
-function loadUserPreferences(){
+var userPreferences = {};
+
+function loadUserPreferences(callback){
     chrome.storage.sync.get(datakey, function(){
             var userPrefJson = result[dataKey];
-            var userPref = {};
+            userPreferences = {};
             if(userPrefJson === null || userPrefJson === ''){
-                userPref = {
-                    block: true
+                userPreferences = {
+                    blockingEnabled: true
                 };
             }
             else{
-                userPref = JSON.Parse(userPrefJson);
+                userPreferences = JSON.Parse(userPrefJson);
             }
-            return userPref;
+            if(callback) {
+                callback();
+            }
     });
 }
