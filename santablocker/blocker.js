@@ -1,7 +1,6 @@
 //this runs in the page
 
 $(document).ready(function(){
-
     chrome.runtime.sendMessage({userPreferencesRequested: true}, function(response){
         if(response.blockingEnabled){
             initialize();
@@ -13,7 +12,7 @@ function initialize(){
     console.log("initialized");
     var pageText = nativeSelector().toString();
     var hasChristmasContent = pageText.match(christmasListRegex);
-    console.log("christmas content -" + hasChristmasContent);
+    console.log("christmas content - " + hasChristmasContent);
     if(hasChristmasContent){
         var hasNaughtyListContent = pageText.match(naughtListRegex);
         console.log("naughty list content - " + hasNaughtyListContent);
@@ -37,15 +36,16 @@ function nativeSelector() {
     return results;
 }
 
+var initialBody;
+
 function showBlocker(){
-    $('body').children().hide();
+    initialBody = $('body').children();
+    initialBody.hide();
     $('body').load(chrome.extension.getURL("blocker.html"), function(){
         setupBlocker();
     });
     // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension    
 }
-    
-//question manager
 
 var makeQuestion = function (question, answer){
     return {
@@ -75,8 +75,9 @@ function setCurrentQuestion(){
 }
 
 function checkAnswer(answer){
-    if(currentQuestion.answer === answer){s
+    if(currentQuestion.answer === answer){
         $(".blocker-success").css("display", "block");
+        initialBody.show();
     }
     else {
         $(".blocker-failure").css("display", "block");
