@@ -23,3 +23,9 @@ function isEmpty(obj) {
 
     return JSON.stringify(obj) === JSON.stringify({});
 }
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
