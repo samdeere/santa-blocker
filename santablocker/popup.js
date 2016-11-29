@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function storeUserPreferences(){
     var data = {};
 
-    data[DATA_KEY] = JSON.stringify ({
+    data[dataKey] = JSON.stringify ({
         blockingEnabled: blockingEnabledToggle.checked
     });
 
@@ -16,3 +16,7 @@ function storeUserPreferences(){
         chrome.runtime.sendMessage({userPreferencesUpdated: true});
     });
 }
+
+loadUserPreferences(function(){
+    blockingEnabledToggle.checked = userPreferences.blockingEnabled; 
+});

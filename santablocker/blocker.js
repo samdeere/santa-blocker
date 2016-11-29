@@ -1,7 +1,17 @@
 //this runs in the page
 
 $(document).ready(function(){
-    //check user prefs
+
+    chrome.runtime.sendMessage({userPreferencesRequested: true}, function(response){
+        if(response.blockingEnabled){
+            initialize();
+        }
+    });
+})
+
+function initialize(){
+    console.log("initialized");
+}
 
     //if on then check for christmas theme
         //if christmas theme then check for bad content
@@ -11,4 +21,3 @@ $(document).ready(function(){
     //parallax manager
 
     //question manager
-})

@@ -1,14 +1,12 @@
 {
-  "name": "Santa Blocer",
+  "name": "Santa Blocker",
   "version": "0.1.0",
   "description": "Saves Christmas",
   "icons": {
 
   },
   "background": {
-    "scripts": [
-      ["constants.js","helpers.js","background.js"] 
-    ]
+    "scripts": ["constants.js","helpers.js","background.js"] 
   },
   "content_scripts": [
     {
