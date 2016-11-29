@@ -40,11 +40,12 @@ var initialBody;
 
 function showBlocker(){
     initialBody = $('body').children();
-    initialBody.hide();
-    $('body').load(chrome.extension.getURL("blocker.html"), function(){
+    initialBody.addClass('santa-blocker-hidden');
+    $('.santa-blocker-hidden').addClass('hide');
+    $('body').append('<div class="santa-blocker-body"></div>');
+    $('.santa-blocker-body').load(chrome.extension.getURL("blocker.html"), function(){
         setupBlocker();
     });
-    // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension    
 }
 
 var makeQuestion = function (question, answer){
@@ -68,20 +69,25 @@ function setCurrentQuestion(){
     var questionIndex = getRandomInt(0, questions.length)
     currentQuestion = questions[questionIndex];
     $('.blocker-question').text(currentQuestion.question);
-    $(".blocker-success").css("display", "none");
-    $(".blocker-failure").css("display", "none");
-    $(".blocker-retry").css("display", "none");
+    reset();
+}
+function reset(){
+    $(".blocker-success").addClass('hide');
+    $(".blocker-failure").addClass('hide');
+    $(".blocker-retry").addClass('hide');
     $(".blocker-text-input").val();
 }
 
 function checkAnswer(answer){
+    reset();
     if(currentQuestion.answer === answer){
         $(".blocker-success").css("display", "block");
-        initialBody.show();
+        $('.santa-blocker-body').addClass('hide');
+        $('.santa-blocker-hidden').removeClass('hide');
     }
     else {
-        $(".blocker-failure").css("display", "block");
-        $(".blocker-retry").css("display", "block");
+        $(".blocker-failure").removeClass('hide');
+        $(".blocker-retry").removeClass('hide');
     }
 }
 
