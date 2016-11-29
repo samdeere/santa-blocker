@@ -40,11 +40,60 @@ function nativeSelector() {
 function showBlocker(){
     $('body').children().hide();
     $('body').load(chrome.extension.getURL("blocker.html"));
+    // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension
+}
+    
+//question manager
+
+var makeQuestion = function (question, answer){
+    return {
+        question: question,
+        answer: answer
+    }
+}
+
+var questions = [
+    makeQuestion("question 1", "answer 1"),
+    makeQuestion("question 2", "answer 2"),
+    makeQuestion("question 3", "answer 3"),
+    makeQuestion("question 4", "answer 4"),
+    makeQuestion("question 5", "answer 5")
+]
+
+var currentQuestion;
+
+function setCurrentQuestion(number){
+    currentQuestion = questions[number];
+}
+
+function checkAnswer(answer){
+    if(currentQuestion.answer === answer){
+        $(".blocker-success").css("display", "block");
+    }
+    else {
+        $(".blocker-failure").css("display", "block");
+    }
+}
+
+function setupBlockerQuestion(){
+    var questionIndex = getRandomIntInclusive(0, question.length)
+    setCurrentQuestion(questionIndex);
+    $('.blocker-question').text(currentQuestion.question);
+    $('.blocker-answer').click(function(){
+        var answer = $(".blocker-text-input").val();
+        checkAnswer(answer)
+    });
+}
+
+function attemptAnswer(){
+
+}
+
+function getRandomIntExclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 
-    //load html by ajax - need to - http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension
-
-    //parallax manager
-
-    //question manager
+//parallax manager
