@@ -39,8 +39,10 @@ function nativeSelector() {
 
 function showBlocker(){
     $('body').children().hide();
-    $('body').load(chrome.extension.getURL("blocker.html"));
-    // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension
+    $('body').load(chrome.extension.getURL("blocker.html"), function(){
+        setupBlockerQuestion();
+    });
+    // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension    
 }
     
 //question manager
@@ -76,20 +78,16 @@ function checkAnswer(answer){
 }
 
 function setupBlockerQuestion(){
-    var questionIndex = getRandomIntInclusive(0, question.length)
+    var questionIndex = getRandomInt(0, questions.length)
     setCurrentQuestion(questionIndex);
     $('.blocker-question').text(currentQuestion.question);
     $('.blocker-answer').click(function(){
         var answer = $(".blocker-text-input").val();
-        checkAnswer(answer)
+        checkAnswer(answer);
     });
 }
 
-function attemptAnswer(){
-
-}
-
-function getRandomIntExclusive(min, max) {
+function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
