@@ -40,7 +40,7 @@ function nativeSelector() {
 function showBlocker(){
     $('body').children().hide();
     $('body').load(chrome.extension.getURL("blocker.html"), function(){
-        setupBlockerQuestion();
+        setupBlocker();
     });
     // http://stackoverflow.com/questions/32269398/load-html-file-from-file-system-with-chrome-extension    
 }
@@ -64,26 +64,34 @@ var questions = [
 
 var currentQuestion;
 
-function setCurrentQuestion(number){
-    currentQuestion = questions[number];
+function setCurrentQuestion(){
+    var questionIndex = getRandomInt(0, questions.length)
+    currentQuestion = questions[questionIndex];
+    $('.blocker-question').text(currentQuestion.question);
+    $(".blocker-success").css("display", "none");
+    $(".blocker-failure").css("display", "none");
+    $(".blocker-retry").css("display", "none");
+    $(".blocker-text-input").val();
 }
 
 function checkAnswer(answer){
-    if(currentQuestion.answer === answer){
+    if(currentQuestion.answer === answer){s
         $(".blocker-success").css("display", "block");
     }
     else {
         $(".blocker-failure").css("display", "block");
+        $(".blocker-retry").css("display", "block");
     }
 }
 
-function setupBlockerQuestion(){
-    var questionIndex = getRandomInt(0, questions.length)
-    setCurrentQuestion(questionIndex);
-    $('.blocker-question').text(currentQuestion.question);
+function setupBlocker(){
+    setCurrentQuestion();
     $('.blocker-answer').click(function(){
         var answer = $(".blocker-text-input").val();
         checkAnswer(answer);
+    });
+    $('.blocker-retry').click(function(){
+        setCurrentQuestion();
     });
 }
 
@@ -92,6 +100,5 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
 
 //parallax manager
