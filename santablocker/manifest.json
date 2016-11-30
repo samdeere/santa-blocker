@@ -6,7 +6,7 @@
 
   },
   "background": {
-    "scripts": ["constants.js","helpers.js","background.js"] 
+    "scripts": ["scripts/constants.js","scripts/helpers.js","scripts/background.js"] 
   },
   "content_scripts": [
     {
@@ -14,8 +14,8 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": [ "vendor/jquery-3.1.1.min.js", "constants.js","helpers.js", "blocker.js", "questions.js"],
-      "css": ["blocker.css"]
+      "js": [ "vendor/jquery-3.1.1.min.js", "scripts/constants.js","scripts/helpers.js", "scripts/blocker.js", "scripts/questions.js"],
+      "css": ["styles/blocker.css"]
     }
   ],
    "permissions": [
