@@ -1,12 +1,12 @@
 function loadUserPreferences(callback){
     chrome.storage.sync.get(dataKey, function(result){
             var userPrefJson = result[dataKey];
-            if(isEmpty(result)){
+            if (isEmpty(result)) {
                 userPreferences = {
                     blockingEnabled: true
                 };
             }
-            else{
+            else {
                 userPreferences = JSON.parse(userPrefJson);
             }
             if(callback) {
