@@ -151,24 +151,32 @@ final option is doubling length
 }
 
 .question-container input {
+    text-align: center;
     color: rgb(236, 71, 74);
     font-family: 'Rubik', sans-serif;
-    width: 300px;
     background-color: rgb(254, 236, 237);
     border-radius: 12px;
     border: 3px solid rgb(236, 71, 74) !important;
     margin-top: 10px;
+    height: 32px;
+    width: 303px;
+    font-size: 25px;
+}
+
+.blocker-question {
+    margin-bottom: 0px;
 }
 
 .blocker-answer, .blocker-retry {
     color: rgb(236, 71, 74);
-    width: 300px;
     background-color: rgb(254, 236, 237);
     padding: 5px;
     border-radius: 12px;
     margin: 0 auto;
     margin-top: 10px;
     cursor: pointer;
+    height: 32px;
+    width: 299px;
 }
 
 textarea:focus, input:focus{
