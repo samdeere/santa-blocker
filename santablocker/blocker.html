@@ -1,4 +1,12 @@
-<div class="blocker-background"></div>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Rubik');
+</style>
+
+<div class="blocker-background background-base">
+  <div class="santa">
+  </div>
+</div>
+
 <div class="blocker-background blocker-foreground-3"></div>
 <div class="blocker-background blocker-foreground-2"></div>
 <div class="blocker-background blocker-foreground-1 cycling"></div>
@@ -7,22 +15,32 @@
 
 <div class="text-container">
 
-  <p class="blocker-question">
-
-  </p>
-
-  <input type="text" class="blocker-text-input" />
-
-  <div class="blocker-answer">
-    answer
+  <div class="text-intro rubik">
+    <div class="intro-1 luckiest-guy">
+      <span>HO</span>
+      <span>HO</span>
+      <span>HOLD ON!</span>
+    </div>
+    <div class="intro-2">
+      THIS SITE CONTAINS </br> CHRISTMAS CONTENT
+    </div>
+    <div class="intro-3">
+      ANSWER THE QUESTION </br> TO ENTER THE GROTTO
+    </div>
   </div>
 
-  <div class="blocker-failure hide">
-    failure
-  </div>
+  <div class="question-container hide">
+    <p class="blocker-question"></p>
 
-  <div class="blocker-retry hide">
-    retry
+    <input type="text" class="blocker-text-input" />
+
+    <div class="blocker-answer">
+      answer
+    </div>
+
+    <div class="blocker-retry hide">
+      retry
+    </div>
   </div>
 
 </div>

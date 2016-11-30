@@ -1,3 +1,18 @@
+.santa-blocker-body {
+   height: 100%;
+    width: 100%; 
+    background-color: #7daab2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.background-base {
+    margin-bottom: -5%;
+}
+
 .blocker-background {
     height: 100%;
     width: 100%;
@@ -13,11 +28,10 @@
 
 .blocker-foreground-3 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground3.png');
-    z-index:3;
-   	background-repeat: repeat-x;
+    z-index:1;
     background-position: 0px 0px;
-    -webkit-animation: animatedBackground 80s linear infinite;
-	animation: animatedBackground 50s linear infinite;
+    -webkit-animation: animatedBackground 90s linear infinite;
+	animation: animatedBackground 90s linear infinite;
 }
 
 .blocker-foreground-2 {
@@ -25,43 +39,81 @@
     z-index:4;
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 60s linear infinite;
-	animation: animatedBackground 30s linear infinite;
+	animation: animatedBackground 60s linear infinite;
 }
 
 .blocker-foreground-1 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground1.png');
     z-index:5;
     background-position: 0px 0px;
-    -webkit-animation: animatedBackground 30s linear infinite;
-	animation: animatedBackground 10s linear infinite;
+    -webkit-animation: animatedBackground 20s linear infinite;
+	animation: animatedBackground 20s linear infinite;
 }
 
 .snow-1 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/snow1.gif');
-    z-index:1;
+    z-index:2;
     opacity: 0.2;
+    -webkit-animation: animatedBackground 30s linear infinite;
+	animation: animatedBackground 30s linear infinite;
 }
 
 .snow-2 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/snow2.gif');
-    z-index:2;
+    z-index:3;
     opacity: 0.6;
 }
 
-.text-container {
-    z-index:6;
+.santa {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/santa-scaled.gif');
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    background-size: 100%;
+    width: 22%;
+    left: 43%;
+    top: -10%;
 }
 
 @-webkit-keyframes animatedBackground{
 	from { background-position: 0 0; }
-	to { background-position: -1287px 0; }
+	to { background-position: -1920px 0; }
+}
+
+@-webkit-keyframes animatedImage {
+	from { background-position: 0 0; }
+	to { background-position: -1920px 0; }
 }
 
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
-	to { background-position: -1287px 0; }
+	to { background-position: -1920px 0; }
 }
+
+/* https://davidwalsh.name/background-animation-css 
+http://stackoverflow.com/questions/8679066/make-image-not-background-img-in-div-repeat
+final option is doubling length
+*/
 
 .hide {
     display: none;
+}
+
+.luckiest-guy {
+   font-family: 'Luckiest Guy', cursive;
+}
+
+.rubik {
+    font-family: 'Rubik', sans-serif;
+}
+
+.text-container {
+    height: 100%;
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
 }
