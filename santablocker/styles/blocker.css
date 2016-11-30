@@ -71,7 +71,7 @@
     position: absolute;
     background-size: 100%;
     width: 22%;
-    left: 43%;
+    left: 40%;
     top: -10%;
 }
 
@@ -99,12 +99,39 @@ final option is doubling length
     display: none;
 }
 
-.luckiest-guy {
-   font-family: 'Luckiest Guy', cursive;
+.text-container {
+    text-align: center;
+    margin: 0 auto;
+    color: rgb(254, 236, 237);
+    font-family: 'Rubik', sans-serif;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-top: 20%;
 }
 
-.rubik {
-    font-family: 'Rubik', sans-serif;
+.intro-1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(236, 71, 74);
+    font-size: 55px;
+    line-height: 1;
+}
+
+.ho-1, .ho-2 {
+    font-size: 85px;
+    line-height: 0.8;
+}
+
+.intro-2 {
+    color: rgb(236, 71, 74);
+    width: 300px;
+    background-color: rgb(254, 236, 237);
+    padding: 5px;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+
+.intro-3 {
+    margin-top: 10px;
 }
 
 .text-container {
