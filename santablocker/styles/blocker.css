@@ -13,7 +13,7 @@
 
 .blocker-foreground-3 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground3.png');
-    z-index:1;
+    z-index:3;
    	background-repeat: repeat-x;
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 80s linear infinite;
@@ -22,7 +22,7 @@
 
 .blocker-foreground-2 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground2.png');
-    z-index:2;
+    z-index:4;
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 60s linear infinite;
 	animation: animatedBackground 30s linear infinite;
@@ -30,7 +30,7 @@
 
 .blocker-foreground-1 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground1.png');
-    z-index:3;
+    z-index:5;
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 30s linear infinite;
 	animation: animatedBackground 10s linear infinite;
@@ -38,12 +38,14 @@
 
 .snow-1 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/snow1.gif');
-    z-index:4;
+    z-index:1;
+    opacity: 0.2;
 }
 
 .snow-2 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/snow2.gif');
-    z-index:5;
+    z-index:2;
+    opacity: 0.6;
 }
 
 .text-container {
