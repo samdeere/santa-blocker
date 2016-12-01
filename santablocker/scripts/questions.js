@@ -17,7 +17,7 @@ function setupQuestions() {
     setCurrentQuestion();
 
     $('.blocker-answer').click(function () {
-        var answer = $(".blocker-text-input").val('');
+        var answer = $(".blocker-text-input").val();
         checkAnswer(answer);
     });
 
@@ -43,7 +43,7 @@ function animateIntro(){
 
 function setCurrentQuestion() {
     var questionIndex = getRandomInt(0, questions.length);
-    if(questionIndex === questions[questionIndex].index){
+    if(currentQuestion && questionIndex + 1 === currentQuestion.index){
         setCurrentQuestion();
     }
     currentQuestion = questions[questionIndex];
@@ -68,5 +68,5 @@ function reset() {
     $(".blocker-success").addClass('hide');
     $(".blocker-failure").addClass('hide');
     $(".blocker-retry").addClass('hide');
-    $(".blocker-text-input").val();
+    $(".blocker-text-input").val('');
 }
