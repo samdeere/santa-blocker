@@ -165,6 +165,7 @@ final option is doubling length
     margin-bottom: 0px;
     color: rgb(236, 71, 74);
     font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
 }
 
 .blocker-answer, .blocker-retry {
