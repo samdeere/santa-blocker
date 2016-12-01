@@ -48,6 +48,7 @@
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 20s linear infinite;
 	animation: animatedBackground 20s linear infinite;
+    margin-top: 1%
 }
 
 .snow-1 {
@@ -107,6 +108,14 @@ final option is doubling length
     font-size: 25px;
     line-height: 1.2;
     margin-top: 20%;
+    margin-bottom: 0;
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
 }
 
 .intro-1 {
@@ -134,17 +143,6 @@ final option is doubling length
     margin-top: 10px;
 }
 
-.text-container {
-    height: 100%;
-    width: 100%; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-}
-
 .question-container {
     margin: 0 auto;
     width: 450px;
@@ -165,6 +163,8 @@ final option is doubling length
 
 .blocker-question {
     margin-bottom: 0px;
+    color: rgb(236, 71, 74);
+    font-family: 'Rubik', sans-serif;
 }
 
 .blocker-answer, .blocker-retry {

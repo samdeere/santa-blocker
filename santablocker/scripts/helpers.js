@@ -1,23 +1,28 @@
-function loadUserPreferences(callback){
-    chrome.storage.sync.get(dataKey, function(result){
-            var userPrefJson = result[dataKey];
-            if (isEmpty(result)) {
-                userPreferences = {
-                    blockingEnabled: true
-                };
-            }
-            else {
-                userPreferences = JSON.parse(userPrefJson);
-            }
-            if(callback) {
-                callback();
-            }
+function loadUserPreferences(callback) {
+    chrome.storage.sync.get(dataKey, function (result) {
+        var userPrefJson = result[dataKey];
+        if (isEmpty(result)) {
+            userPreferences = {
+                blockingEnabled: true
+            };
+        }
+        else {
+            userPreferences = JSON.parse(userPrefJson);
+        }
+
+        var blockerData = userPreferences.blockingEnabled ? blockerOn : blockerOff;
+
+        chrome.browserAction.setIcon({ path: blockerData });
+
+        if (callback) {
+            callback();
+        }
     });
 }
 
 function isEmpty(obj) {
-    for(var prop in obj) {
-        if(obj.hasOwnProperty(prop))
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop))
             return false;
     }
 
@@ -25,7 +30,7 @@ function isEmpty(obj) {
 }
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
 }

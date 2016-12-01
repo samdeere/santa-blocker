@@ -2,14 +2,14 @@ var userPreferences = {
     test: true
 }
 
-loadUserPreferences()
+loadUserPreferences();
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    if(request.userPreferencesUpdated){
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.userPreferencesUpdated) {
         loadUserPreferences();
     }
 
-    if(request.userPreferencesRequested){
+    if (request.userPreferencesRequested) {
         loadUserPreferences(sendResponse(userPreferences));
     }
 });

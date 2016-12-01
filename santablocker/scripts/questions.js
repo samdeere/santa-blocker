@@ -1,27 +1,34 @@
 var currentQuestion;
 
-var makeQuestion = function (question, answer) {
+var makeQuestion = function (question, answer, index) {
     return {
         question: question,
-        answer: answer
+        answer: answer,
+        index: index
     }
 }
 
 var questions = [
-    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", "filthy animal")
+    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", "filthy animal",1),
+    makeQuestion("another christmas question that's really funny", "answer", 2)
 ]
 
 function setupQuestions() {
     setCurrentQuestion();
+
     $('.blocker-answer').click(function () {
-        var answer = $(".blocker-text-input").val();
+        var answer = $(".blocker-text-input").val('');
         checkAnswer(answer);
     });
+
     $('.blocker-retry').click(function () {
         setCurrentQuestion();
     });
 
-    //setup timeout for intro dissapear
+    animateIntro();
+}
+
+function animateIntro(){
     $(".ho-1").delay(1000).fadeIn(400);
     $(".ho-2").delay(2000).fadeIn(400);
     $(".ho-3").delay(3000).fadeIn(400);
@@ -36,6 +43,9 @@ function setupQuestions() {
 
 function setCurrentQuestion() {
     var questionIndex = getRandomInt(0, questions.length);
+    if(questionIndex === questions[questionIndex].index){
+        setCurrentQuestion();
+    }
     currentQuestion = questions[questionIndex];
     $('.blocker-question').text(currentQuestion.question);
     reset();

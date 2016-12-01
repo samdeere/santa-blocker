@@ -23,6 +23,11 @@
     "storage"
   ], 
   "browser_action": {
+    "default_icon": {                   
+            "16": "assets/blocker_off_16.png",           
+            "48": "assets/blocker_off_48.png",           
+            "128": "assets/blocker_off_128.png"            
+          },
     "default_popup": "popup.html",
     "default_title": "Santa Blocker"
   },
