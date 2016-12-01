@@ -1,5 +1,5 @@
 {
-  "name": "Santa Blocker",
+  "name": "Project Blitzn",
   "version": "0.1.0",
   "description": "Saves Christmas",
   "icons": {
@@ -29,7 +29,7 @@
             "128": "assets/blocker_off_128.png"            
           },
     "default_popup": "popup.html",
-    "default_title": "Santa Blocker"
+    "default_title": "Project Blitzn"
   },
   "manifest_version": 2,
   "content_security_policy": "default-src 'none'; style-src 'self'; script-src 'self';",

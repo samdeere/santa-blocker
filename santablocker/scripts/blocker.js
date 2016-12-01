@@ -1,12 +1,20 @@
 var initialBody;
+var blockerLoaded = false;
 
 $(document).ready(function(){
     chrome.runtime.sendMessage({userPreferencesRequested: true}, function(response){
         if(response.blockingEnabled){
             initialize();
+            $(document).scroll(onScrollCheck);
         }
     });
 })
+
+function onScrollCheck(){
+    if(!blockerLoaded){
+        initialize();
+    }
+}
 
 function initialize(){
     console.log("initialized");
@@ -37,6 +45,7 @@ function nativeSelector() {
 }
 
 function showBlocker(){
+    blockerLoaded = true;
     initialBody = $('body').children();
     initialBody.addClass('santa-blocker-hidden');
     $('.santa-blocker-hidden').addClass('hide');
