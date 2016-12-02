@@ -95,6 +95,7 @@
 .preamble a {
     color: rgb(249, 217, 0);
     text-decoration: none;
+    outline: none;
 }
 
 .preamble a:hover {
