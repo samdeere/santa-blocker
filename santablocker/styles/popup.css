@@ -91,3 +91,12 @@
     font-family: 'Luckiest Guy', cursive;
     color: rgb(236, 71, 74);
 }
+
+.preamble a {
+    color: rgb(249, 217, 0);
+    text-decoration: none;
+}
+
+.preamble a:hover {
+    text-decoration: underline;
+}

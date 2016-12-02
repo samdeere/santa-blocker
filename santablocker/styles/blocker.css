@@ -30,24 +30,24 @@
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground3.png');
     z-index:1;
     background-position: 0px 0px;
-    -webkit-animation: animatedBackground 90s linear infinite;
-	animation: animatedBackground 90s linear infinite;
+    -webkit-animation: animatedBackground 900s linear infinite;
+	animation: animatedBackground 900s linear infinite;
 }
 
 .blocker-foreground-2 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground2.png');
     z-index:4;
     background-position: 0px 0px;
-    -webkit-animation: animatedBackground 60s linear infinite;
-	animation: animatedBackground 60s linear infinite;
+    -webkit-animation: animatedBackground 600s linear infinite;
+	animation: animatedBackground 600s linear infinite;
 }
 
 .blocker-foreground-1 {
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/foreground1.png');
     z-index:5;
     background-position: 0px 0px;
-    -webkit-animation: animatedBackground 20s linear infinite;
-	animation: animatedBackground 20s linear infinite;
+    -webkit-animation: animatedBackground 200s linear infinite;
+	animation: animatedBackground 200s linear infinite;
     margin-top: 1%
 }
 
@@ -55,8 +55,8 @@
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/snow1.gif');
     z-index:2;
     opacity: 0.2;
-    -webkit-animation: animatedBackground 30s linear infinite;
-	animation: animatedBackground 30s linear infinite;
+    -webkit-animation: animatedBackground 300s linear infinite;
+	animation: animatedBackground 300s linear infinite;
 }
 
 .snow-2 {
@@ -78,17 +78,17 @@
 
 @-webkit-keyframes animatedBackground{
 	from { background-position: 0 0; }
-	to { background-position: -1920px 0; }
+	to { background-position: -19200px 0; }
 }
 
 @-webkit-keyframes animatedImage {
 	from { background-position: 0 0; }
-	to { background-position: -1920px 0; }
+	to { background-position: -19200px 0; }
 }
 
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
-	to { background-position: -1920px 0; }
+	to { background-position: -19200px 0; }
 }
 
 /* https://davidwalsh.name/background-animation-css 
