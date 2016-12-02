@@ -18,7 +18,7 @@ function onScrollCheck() {
 
 function initialize() {
     console.log("initialized");
-    var pageText = nativeSelector().toString();
+    var pageText = $('body *:not(:has(*)):visible').text();
     var hasChristmasContent = pageText.match(christmasListRegex);
     console.log("christmas content - " + hasChristmasContent);
     if (hasChristmasContent) {
@@ -31,6 +31,8 @@ function initialize() {
     }
 }
 
+
+//remove if jquery tests are more effective
 function nativeSelector() {
     var elements = document.querySelectorAll("body, body *");
     var results = [];
