@@ -9,8 +9,10 @@ var makeQuestion = function (question, answer, index) {
 }
 
 var questions = [
-    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", "filthy animal",1),
-    makeQuestion("another christmas question that's really funny", "answer", 2)
+    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", "filthy animal", 1),
+    makeQuestion("another christmas question that's really funny", "answer", 2),
+    makeQuestion("question 3", "answer 3"),
+    makeQuestion("question 4", "answer 4")
 ]
 
 function setupQuestions() {
@@ -25,28 +27,38 @@ function setupQuestions() {
         setCurrentQuestion();
     });
 
+    $('.blocker-text-input').keypress(function (e) {
+        if (e.which == 13) {
+            var answer = $(".blocker-text-input").val();
+            checkAnswer(answer);
+        }
+    });
+
     animateIntro();
 }
 
-function animateIntro(){
+function animateIntro() {
     $(".ho-1").delay(1000).fadeIn(400);
     $(".ho-2").delay(2000).fadeIn(400);
     $(".ho-3").delay(3000).fadeIn(400);
     $(".intro-2").delay(4000).fadeIn(400);
     $(".intro-3").delay(6000).fadeIn(400);
 
-    setTimeout(function(){
+    setTimeout(function () {
         $(".text-intro").addClass("hide");
         $(".question-container").removeClass("hide").fadeIn(400);
     }, 8000)
 }
 
 function setCurrentQuestion() {
-    var questionIndex = getRandomInt(0, questions.length);
-    if(currentQuestion && questionIndex + 1 === currentQuestion.index){
-        setCurrentQuestion();
+    var questionList = questions;
+    if (currentQuestion) {
+        questionList = questions.filter(function (item) {
+            return item.index !== currentQuestion.index;
+        });
     }
-    currentQuestion = questions[questionIndex];
+    var questionIndex = getRandomInt(0, questionList.length);
+    currentQuestion = questionList[questionIndex];
     $('.blocker-question').text(currentQuestion.question);
     reset();
 }

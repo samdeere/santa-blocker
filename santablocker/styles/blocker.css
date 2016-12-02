@@ -180,6 +180,11 @@ final option is doubling length
     max-width: 299px !important;
 }
 
+.blocker-answer:hover, .blocker-retry:hover {
+    background-color: rgb(236, 71, 74) !important;
+    color: rgb(254, 236, 237) !important;
+}
+
 textarea:focus, input:focus{
     outline: none;
 }
