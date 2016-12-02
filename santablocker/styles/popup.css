@@ -66,9 +66,28 @@
     background-repeat: no-repeat;
     margin: 0 auto;
     margin-top: -16px;
-    margin-bottom: 22px;
+    margin-bottom: -15px;
 }
 
 #blocking-enabled-toggle:checked + label {
     background-image: url('../assets/toggle-on.png');
+}
+
+.toggle-labels {
+    font-size: 20px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.off-label {
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(79, 200, 237);
+    margin-right: 44px;
+}
+
+.on-label {
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(236, 71, 74);
 }
