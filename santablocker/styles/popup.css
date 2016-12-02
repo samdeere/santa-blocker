@@ -1,4 +1,21 @@
-      @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Rubik:700');
+@font-face {
+	font-family: 'Luckiest Guy';
+	src: url('../assets/LuckiestGuy-Regular.eot');
+	src: url('../assets/LuckiestGuy-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../assets/LuckiestGuy-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('../assets/Rubik-Bold.eot');
+	src: url('../assets/Rubik-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../assets/Rubik-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
 
       body {
        background-color: rgb(255,237,237);
@@ -13,15 +30,22 @@
       }
 
       .header {
-        font-size: 40px;
+        font-size: 90px;
         font-family: 'Luckiest Guy', cursive;
       }
 
       .preamble {
-        font-size: 20px;
+        margin-top: -10px;
+        font-size: 12px;
       }
 
-      .warning {
-       color: rgb(255,237,237);
-       background-color: rgb(236, 71, 74);
-      }
+      .warning {          
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 15px;
+        color: rgb(255,237,237);
+        background-color: rgb(236, 71, 74);
+        font-size: 13px;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
