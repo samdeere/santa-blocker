@@ -43,9 +43,32 @@
         margin-top: 10px;
         padding: 8px;
         border-radius: 15px;
-        color: rgb(255,237,237);
+        color: rgb(255,255,255);
         background-color: rgb(236, 71, 74);
         font-size: 13px;
         margin-left: 10px;
         margin-right: 10px;
         }
+
+#blocking-enabled-toggle {
+    display: none;
+}
+
+.blocking-enabled-toggle {
+    background-image: url(../assets/toggle-off.png);
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 170px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: -16px;
+    margin-bottom: 22px;
+}
+
+#blocking-enabled-toggle:checked + label {
+    background-image: url('../assets/toggle-on.png');
+}
