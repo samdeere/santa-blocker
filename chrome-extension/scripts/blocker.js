@@ -31,7 +31,7 @@ function initialize() {
     }
 }
 
-
+//move to jquery library isinviewport
 //remove if jquery tests are more effective
 function nativeSelector() {
     var elements = document.querySelectorAll("body, body *");

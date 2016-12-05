@@ -1,3 +1,5 @@
+//self-actuating function 
+
 var currentQuestion;
 
 var makeQuestion = function (question, answer, index) {
