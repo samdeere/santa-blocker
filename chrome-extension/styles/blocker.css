@@ -183,8 +183,9 @@ or this!!! https://css-tricks.com/controlling-css-animations-transitions-javascr
 
 .answer-option {
     cursor: pointer;
+    color: rgb(236, 71, 74) !important;
 }
 
 .answer-option:hover {
-    color: rgb(236, 71, 74) !important;
+    color: rgb(254, 236, 237) !important;
 }
