@@ -2,13 +2,12 @@
 
 var currentQuestion;
 
-var makeQuestion = function (question, answer, index) {
+var makeQuestion = function (question, answers) {
     return {
         question: question,
-        answer: answer,
-        index: index
-    }
-}
+        answer: answers
+    };
+};
 
 var makeAnswer = function (answers, correctAnswerIndex) {
     var sortCounter = 1;
@@ -20,17 +19,17 @@ var makeAnswer = function (answers, correctAnswerIndex) {
         };
         sortCounter++;
         answersSorted.push(item);
-    })
+    });
 
     return {
         answers: answersSorted,
         correctAnswerIndex: correctAnswerIndex
-    }
-}
+    };
+};
 
 var questions = [
     makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", makeAnswer(["filthy animal", "WAT"], 1)),
-    makeQuestion("another christmas question that's really funny", "answer", makeAnswer(["1", "2", "3"], 2)),
+    makeQuestion("another christmas question that's really funny", makeAnswer(["1", "2", "3"], 2)),
     makeQuestion("question 3", makeAnswer(["1", "2", "3"], 3)),
     makeQuestion("question 4", makeAnswer(["1", "2", "3"], 2))
 ]
@@ -42,24 +41,25 @@ function setupQuestions() {
 }
 
 function setupAnswers(question) {
-    question.answers.forEach(function (answer) {
+    var answers = question.answer.answers;
+    answers.forEach(function (answer) {
         var answerDiv = $('<div class="answer-' + answer.sortOrder + ' answer-option" data-sort-order="' + answer.sortOrder + '">' + answer.text + '</div>');
         $('.answer-container').append(answerDiv);
-    })
+    });
 
     $('.answer-option').click(function () {
         var obj = $(this);
-        var sortOrder = obj.attr("data-sort-order");
-        if (currentQuestion.correctAnswerIndex === sortOrder) {
+        var sortOrder = obj.attr("data-sort-order") * 1;
+        if (currentQuestion.answer.correctAnswerIndex === sortOrder) {
             $('.santa-blocker-body').addClass('hide');
             $('.santa-blocker-hidden').removeClass('hide');
         }
         else {
             $(".answer-option").remove();
-            setupAnswers(currentQuestion);
             setCurrentQuestion();
+            setupAnswers(currentQuestion);
         }
-    })
+    });
 }
 
 function animateIntro() {
@@ -79,7 +79,7 @@ function setCurrentQuestion() {
     var questionList = questions;
     if (currentQuestion) {
         questionList = questions.filter(function (item) {
-            return item.index !== currentQuestion.index;
+            return item.question !== currentQuestion.question;
         });
     }
     var questionIndex = getRandomInt(0, questionList.length);
