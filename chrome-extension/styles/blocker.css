@@ -181,11 +181,10 @@ or this!!! https://css-tricks.com/controlling-css-animations-transitions-javascr
     max-width: 299px !important;
 }
 
-.blocker-answer:hover, .blocker-retry:hover {
-    background-color: rgb(236, 71, 74) !important;
-    color: rgb(254, 236, 237) !important;
+.answer-option {
+    cursor: pointer;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+.answer-option:hover {
+    color: rgb(236, 71, 74) !important;
 }

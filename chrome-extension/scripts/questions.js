@@ -29,9 +29,9 @@ var makeAnswer = function (answers, correctAnswerIndex) {
 
 var questions = [
     makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", makeAnswer(["filthy animal", "WAT"], 1)),
-    makeQuestion("another christmas question that's really funny", makeAnswer(["1", "2", "3"], 2)),
-    makeQuestion("question 3", makeAnswer(["1", "2", "3"], 3)),
-    makeQuestion("question 4", makeAnswer(["1", "2", "3"], 2))
+    makeQuestion("another christmas question that's really funny", makeAnswer(["this is answer 1", " this is test answer 2", "unsurprisingly, this is 3"], 2)),
+    makeQuestion("question 3", makeAnswer(["this is answer 1", " this is test answer 2", "unsurprisingly, this is 3"], 3)),
+    makeQuestion("question 4", makeAnswer(["this is answer 1", " this is test answer 2", "unsurprisingly, this is 3"], 2))
 ]
 
 function setupQuestions() {
