@@ -49,7 +49,8 @@ var christmasListRegex = new RegExp(christmasList.join('|'), 'i')
 
 //cynical, swearlist
 var naughtyList = [
-    'real'
+    'real',
+    'the'
 ]
 
 var naughtyListRegex = new RegExp(naughtyList.join('|'), 'i')

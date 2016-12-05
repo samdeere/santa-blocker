@@ -1,12 +1,5 @@
 //self-actuating function 
 
-//move to multiple answer
-
-//foreach var answer in answers, create an item on page
-//send index down to check answer
-
-//on teardown destroy answers
-
 var currentQuestion;
 
 var makeQuestion = function (question, answer, index) {
@@ -17,21 +10,21 @@ var makeQuestion = function (question, answer, index) {
     }
 }
 
-var makesAnswer = function (answers, correctAnswerIndex) {
+var makeAnswer = function (answers, correctAnswerIndex) {
     var sortCounter = 1;
-    var answersSorted = sorted.forEach(function (answer) {
+    var answersSorted = [];
+    answers.forEach(function (answer) {
         var item = {
-            text: " answer",
-            sortOrder = sortCounter
+            text: answer,
+            sortOrder: sortCounter
         };
         sortCounter++;
-        return item;
+        answersSorted.push(item);
     })
 
     return {
         answers: answersSorted,
-        correctAnswerIndex: correctAnswerIndex,
-        sortOrder: sortOrder
+        correctAnswerIndex: correctAnswerIndex
     }
 }
 
@@ -63,6 +56,7 @@ function setupAnswers(question) {
         }
         else {
             $(".answer-option").remove();
+            setupAnswers(currentQuestion);
             setCurrentQuestion();
         }
     })
