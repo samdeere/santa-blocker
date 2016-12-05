@@ -1,5 +1,12 @@
 //self-actuating function 
 
+//move to multiple answer
+
+//foreach var answer in answers, create an item on page
+//send index down to check answer
+
+//on teardown destroy answers
+
 var currentQuestion;
 
 var makeQuestion = function (question, answer, index) {
@@ -10,33 +17,55 @@ var makeQuestion = function (question, answer, index) {
     }
 }
 
+var makesAnswer = function (answers, correctAnswerIndex) {
+    var sortCounter = 1;
+    var answersSorted = sorted.forEach(function (answer) {
+        var item = {
+            text: " answer",
+            sortOrder = sortCounter
+        };
+        sortCounter++;
+        return item;
+    })
+
+    return {
+        answers: answersSorted,
+        correctAnswerIndex: correctAnswerIndex,
+        sortOrder: sortOrder
+    }
+}
+
 var questions = [
-    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", "filthy animal", 1),
-    makeQuestion("another christmas question that's really funny", "answer", 2),
-    makeQuestion("question 3", "answer 3"),
-    makeQuestion("question 4", "answer 4")
+    makeQuestion("according to macaulay culkin who is meant to keep 'the change'?", makeAnswer(["filthy animal", "WAT"], 1)),
+    makeQuestion("another christmas question that's really funny", "answer", makeAnswer(["1", "2", "3"], 2)),
+    makeQuestion("question 3", makeAnswer(["1", "2", "3"], 3)),
+    makeQuestion("question 4", makeAnswer(["1", "2", "3"], 2))
 ]
 
 function setupQuestions() {
     setCurrentQuestion();
-
-    $('.blocker-answer').click(function () {
-        var answer = $(".blocker-text-input").val();
-        checkAnswer(answer);
-    });
-
-    $('.blocker-retry').click(function () {
-        setCurrentQuestion();
-    });
-
-    $('.blocker-text-input').keypress(function (e) {
-        if (e.which == 13) {
-            var answer = $(".blocker-text-input").val();
-            checkAnswer(answer);
-        }
-    });
-
+    setupAnswers(currentQuestion);
     animateIntro();
+}
+
+function setupAnswers(question) {
+    question.answers.forEach(function (answer) {
+        var answerDiv = $('<div class="answer-' + answer.sortOrder + ' answer-option" data-sort-order="' + answer.sortOrder + '">' + answer.text + '</div>');
+        $('.answer-container').append(answerDiv);
+    })
+
+    $('.answer-option').click(function () {
+        var obj = $(this);
+        var sortOrder = obj.attr("data-sort-order");
+        if (currentQuestion.correctAnswerIndex === sortOrder) {
+            $('.santa-blocker-body').addClass('hide');
+            $('.santa-blocker-hidden').removeClass('hide');
+        }
+        else {
+            $(".answer-option").remove();
+            setCurrentQuestion();
+        }
+    })
 }
 
 function animateIntro() {
@@ -65,22 +94,6 @@ function setCurrentQuestion() {
     reset();
 }
 
-function checkAnswer(answer) {
-    reset();
-    if (currentQuestion.answer === answer) {
-        $(".blocker-success").css("display", "block");
-        $('.santa-blocker-body').addClass('hide');
-        $('.santa-blocker-hidden').removeClass('hide');
-    }
-    else {
-        $(".blocker-failure").removeClass('hide');
-        $(".blocker-retry").removeClass('hide');
-    }
-}
-
 function reset() {
-    $(".blocker-success").addClass('hide');
-    $(".blocker-failure").addClass('hide');
-    $(".blocker-retry").addClass('hide');
-    $(".blocker-text-input").val('');
+    $(".question-option").remove();
 }
