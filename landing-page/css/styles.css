@@ -4,9 +4,21 @@ body {
     color: rgb(239, 68, 72);
 }
 
+.logo {
+    margin-left: 20px;
+    margin-top: 16px;
+    max-width: 48px;
+}
+
+.brand {
+    min-width: 119px;
+    margin-top: 17px;
+    margin-left: -37px;
+}
+
 h1 {
-    font-size: 58px;
-        margin-top: 77px;
+      font-size: 52px;
+    margin-top: 72px;
 }
 
 .cta {
@@ -18,7 +30,7 @@ h1 {
     margin: 0 auto;
     margin-top: 23px;
     display: block;
-    max-width: 73%;
+    max-width: 64%;
 }
 
 a:hover {
@@ -33,5 +45,15 @@ a:hover {
 
 .sharing .twitter, .sharing .facebook {
     cursor: pointer;
+    min-width: 70px;
 }
+
+.sharing .facebook {
+    margin-right: -5px;
+}
+
+.sharing .twitter{
+    margin-left: -5px;
+} 
+
 
