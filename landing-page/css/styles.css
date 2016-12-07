@@ -1,7 +1,18 @@
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
 body {
     background-color: rgb(255, 236, 236);
     font-family: 'Rubik', sans-serif;
     color: rgb(239, 68, 72);
+    background-image: url('/images/background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
 }
 
 .logo {
