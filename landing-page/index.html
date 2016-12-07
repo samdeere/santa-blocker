@@ -59,14 +59,14 @@
 
                     </div>
                     <div class="col-xs-3">
-                        <div class="facebook">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=www.google.com&title=Blitzn" class="facebook" target="_blank">
                             <img src="/images/facebook.png" class="img-responsive pull-right" />
-                        </div>
+                        </a>
                     </div>
                     <div class="col-xs-3">
-                        <div class="twitter">
+                        <a href="https://twitter.com/intent/tweet?status=[link here]" class="twitter" target="_blank">
                             <img src="/images/twitter.png" class="img-responsive" />
-                        </div>
+                        </a>
                     </div>
                     <div class="col-xs-3">
 
@@ -78,6 +78,16 @@
 
     <footer>
     </footer>
+
+    <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 </body>
 
 </html>

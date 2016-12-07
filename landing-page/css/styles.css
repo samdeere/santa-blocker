@@ -60,6 +60,10 @@ a:focus {
     margin-left: -5px;
 } 
 
+.sharing .twitter img {
+    display: inline;
+}
+
 @media screen and (min-width: 1000px) {
     h1 {
         font-size: 70px;
@@ -71,6 +75,14 @@ a:focus {
     .cta {
         font-size: 20px;
         max-width: 308px;
+    }
+
+    .sharing .twitter{
+        margin-left: 0px;
+    } 
+
+    .sharing .twitter img {
+        display: block;
     }
 }
 
