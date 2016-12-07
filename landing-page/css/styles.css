@@ -4,16 +4,21 @@ body {
     color: rgb(239, 68, 72);
 }
 
+h1 {
+    font-size: 58px;
+        margin-top: 77px;
+}
+
 .cta {
     color: white;
     background-color: rgb(239, 68, 72);
-}
-
-a {
-    color: white;
-    background-color: rgb(239, 68, 72); 
-    padding: 5px;
+    padding: 15px;
     border-radius: 10px;
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: 23px;
+    display: block;
+    max-width: 73%;
 }
 
 a:hover {
@@ -22,8 +27,8 @@ a:hover {
     text-decoration: none;
 }
 
-h1 {
-    font-size: 62px;
+.sharing {
+    margin-top: 20px;
 }
 
 .sharing .twitter, .sharing .facebook {
