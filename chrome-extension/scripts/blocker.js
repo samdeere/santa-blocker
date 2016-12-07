@@ -17,8 +17,8 @@ function onScrollCheck() {
 }
 
 function initialize() {
-    console.log("initialized");
-    var pageText = $('body *:not(:has(*)):visible').text();
+    var selector = getSelector();
+    var pageText = $(selector).text();
     var hasChristmasContent = pageText.match(christmasListRegex);
     console.log("christmas content - " + hasChristmasContent);
     if (hasChristmasContent) {
@@ -31,19 +31,38 @@ function initialize() {
     }
 }
 
-//move to jquery library isinviewport
-//remove if jquery tests are more effective
-function nativeSelector() {
-    var elements = document.querySelectorAll("body, body *");
-    var results = [];
-    var child;
-    for (var i = 0; i < elements.length; i++) {
-        child = elements[i].childNodes[0];
-        if (elements[i].hasChildNodes() && child.nodeType == 3) {
-            results.push(child.nodeValue);
-        }
+function getSelector() {
+    var selector;
+    if (urlContains('facebook.com')) {
+        selector = ".userContentWrapper, #pagelet_trending_tags_and_topics ul > li";
     }
-    return results;
+    if (urlContains('twitter.com')) {
+        selector = "[data-item-type='tweet'], .trend-item";
+    }
+    if (urlContains('google')) {
+        selector = "a, span, p";
+    }
+    if (urlContains('reddit.com')) {
+        selector = ".sitetable > .thing.link:visible";
+    }
+    if (urlContains('wikipedia')) {
+        selector = "body *:not(:has(*)):visible";
+    }
+    if (urlContains('youtube.com')) {
+        selector = ".yt-lockup, .related-list-item, .comment-renderer-text";
+    }
+    if (urlContains('buzzfeed.com')) {
+        selector = "lede";
+    }
+    if (urlContains('tumblr.com')) {
+        selector = ".post_container, article";
+    }
+    return selector;
+}
+
+function urlContains(site) {
+    var url = window.location.href.toLowerCase();
+    return url.indexOf(site) > -1;
 }
 
 function showBlocker() {
