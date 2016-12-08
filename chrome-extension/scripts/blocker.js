@@ -71,6 +71,7 @@ function showBlocker() {
     initialBody.addClass('santa-blocker-hidden');
     $('.santa-blocker-hidden').addClass('hide');
     $('body').append('<div class="santa-blocker-body"></div>');
+    $('body').css("overflow-y", "hidden");
     $('.santa-blocker-body').load(chrome.extension.getURL("blocker.html"), function () {
         setupQuestions();
     });

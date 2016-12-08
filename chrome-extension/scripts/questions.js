@@ -53,6 +53,7 @@ function setupAnswers(question) {
         if (currentQuestion.answer.correctAnswerIndex === sortOrder) {
             $('.santa-blocker-body').addClass('hide');
             $('.santa-blocker-hidden').removeClass('hide');
+            $('body').css("overflow-y", "visible");
         }
         else {
             $(".answer-option").remove();
