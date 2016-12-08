@@ -1,7 +1,7 @@
 .santa-blocker-body {
    height: 100%;
     width: 100%; 
-    background-color: #7daab2;
+    background-color:rgb(83,139,154);
     position: absolute;
     top: 0;
     left: 0;
@@ -9,8 +9,8 @@
     bottom: 0;
 }
 
-.background-base {
-    margin-bottom: -5%;
+.santa-blocker-body .background-base {
+        top: -1%;
 }
 
 .blocker-background {
@@ -48,7 +48,6 @@
     background-position: 0px 0px;
     -webkit-animation: animatedBackground 200s linear infinite;
 	animation: animatedBackground 200s linear infinite;
-    margin-top: 1%
 }
 
 .snow-1 {
@@ -183,9 +182,9 @@ or this!!! https://css-tricks.com/controlling-css-animations-transitions-javascr
 
 .answer-option {
     cursor: pointer;
-    color: rgb(236, 71, 74) !important;
+    color: rgb(254, 236, 237) !important;
 }
 
 .answer-option:hover {
-    color: rgb(254, 236, 237) !important;
+    color: rgb(236, 71, 74) !important;
 }
