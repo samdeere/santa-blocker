@@ -162,10 +162,13 @@ or this!!! https://css-tricks.com/controlling-css-animations-transitions-javascr
 }
 
 .blocker-question {
-    margin-bottom: 0px;
     color: rgb(236, 71, 74);
     font-family: 'Rubik', sans-serif;
-    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-size: 25px;
+    background-color: rgb(254, 236, 237);
+    border-radius: 11px;
+    padding: 10px;
 }
 
 .blocker-answer, .blocker-retry {
@@ -182,6 +185,7 @@ or this!!! https://css-tricks.com/controlling-css-animations-transitions-javascr
 
 .answer-option {
     cursor: pointer;
+    margin-bottom: 5px;
     color: rgb(254, 236, 237) !important;
 }
 
