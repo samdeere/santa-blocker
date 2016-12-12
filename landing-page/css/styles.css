@@ -1,6 +1,4 @@
-html{
-  height: 100%;
-}
+
 body {
   min-height: 100%;
 }
@@ -28,8 +26,8 @@ body {
 }
 
 h1 {
-    font-size: 52px;
-    margin-top: 72px;
+    font-size: 40px;
+    margin-top: 40px;
 }
 
 .cta {
@@ -75,12 +73,24 @@ a:focus {
     display: inline;
 }
 
+.container p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: rgb(143, 99, 106);
+}
+
+@media screen and (min-width: 767px){
+    html {
+        height: 100%;
+    }
+}
+
 @media screen and (min-width: 1000px) {
     h1 {
-        font-size: 70px;
         max-width: 500px;
         margin: 0 auto;
-        margin-top: 72px;
+        margin-top: 40px;
+        font-size: 50px;
     }
 
     .cta {
