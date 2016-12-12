@@ -40,6 +40,7 @@ function getSelector() {
         selector = "[data-item-type='tweet'], .trend-item";
     }
     if (urlContains('google')) {
+        setupGoogleCheck();
         selector = "a, span, p";
     }
     if (urlContains('reddit.com')) {
@@ -58,6 +59,17 @@ function getSelector() {
         selector = ".post_container, article";
     }
     return selector;
+}
+
+function setupGoogleCheck(){
+    var checks = 0;
+    setTimeout(function(){
+        checks++;
+        if(!blockerLoaded && checks < 3){
+            console.log("google check " + checks);
+            initialize();
+        }
+    },300);
 }
 
 function urlContains(site) {
