@@ -1,9 +1,9 @@
 {
   "name": "Blitzn",
   "version": "0.1.1",
-  "description": "Saves Christmas",
+  "description": "Scared of your little ones finding out Santa’s big secret? Install BLITZN to make your browser free from all those Santa spoilers. With our content screening technology able to detect all unsuitable content when your child is browsing online, you don’t need to worry about stumbling on the big Christmas secret.",
   "icons": {
-
+    
   },
   "background": {
     "scripts": ["scripts/constants.js","scripts/helpers.js","scripts/background.js"] 

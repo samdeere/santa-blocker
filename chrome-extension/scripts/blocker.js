@@ -69,7 +69,7 @@ function setupGoogleCheck(){
             console.log("google check " + checks);
             initialize();
         }
-    },300);
+    },500);
 }
 
 function urlContains(site) {
