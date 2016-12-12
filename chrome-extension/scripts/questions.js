@@ -30,24 +30,24 @@ var makeAnswer = function (answers, correctAnswerIndex) {
 var questions = [
     makeQuestion("Where does Chris Rea drive to?", makeAnswer(["Bare foot to Dundee", "Home for Christmas"], 2)),
     makeQuestion("Which future President appeared in Home Alone 2?", makeAnswer(["Kanye West", "Donald Trump"], 2)),
-    makeQuestion("What did Jona Lewie want to stop?", makeAnswer(["He wanted to stop trade sanctions in Russia", "He wanted to stop the cavalry"], 2)),
+    makeQuestion("What did Jona Lewie want to stop?", makeAnswer(["He wanted to stop trade sanctions in Russia", "He wanted to stop the cavalry"], 1)),
     makeQuestion("What did Jimmy Stewart proclaim?", makeAnswer(["‘It’s a wonderful quasi-religious holiday!!’", "‘It’s a wonderful life!’"], 2)),
     makeQuestion("What did the three wise men follow?", makeAnswer(["Your mum on Twitter", "A really bright star"], 2)),
     makeQuestion("Christmas is all about the spirit of what…", makeAnswer(["Giving", "Getting your credit rating up"], 1)),
     makeQuestion("Perry Como Thought It Was Beginning to look a lot like…", makeAnswer(["The Death of Democracy", "Christmas"], 2)),
     makeQuestion("Mince Pies are made from...", makeAnswer(["Mince Meat", "Mints Meat"], 1)),
-    makeQuestion("What kind of sauce do you have at Christmas dinner?", makeAnswer(["Bread sauce", "Curry sauce"], 2)),
-    makeQuestion("Baby Jesus was born in", makeAnswer(["A stable", "A world-renowned ICU unit"], 2)),
-    makeQuestion("Bono is famous for bellowing what line in a Christmas song?", makeAnswer(["‘AND TONIGHT THANK GOD IT’S THEM INSTEAD OF YOUUU’", "‘The John Lewis adverts do not translate, culturally, in the sub saharan continent’"], 2)),
-    makeQuestion("Baby if you’ve got to go away...", makeAnswer(["I don’t think I can take the pain, won’t you stay another day? ", "Could you please take the bins out?"], 2)),
-    makeQuestion("Last year George Michael gave you what?", makeAnswer(["His Heart.", "His famous Festive Reacharound"], 2)),
-    makeQuestion("Mulled Wine is made of", makeAnswer(["Red Wine, Spices and Fruit", "Tatties, Lemon Essence and an old shoe"], 2)),
-    makeQuestion("If Christmas was in fact ‘everyday’ as Wizzard proposed, Would it be", makeAnswer(["A wondrous thing, full of hope and happiness", "A logistical, and financially crippling, nightmare that would bring an end to society as we know it."], 2)),
-    makeQuestion("What tows Santa’s sleigh", makeAnswer(["A special Christmas horse", "Magical flying Christmas Reindeer"], 1)),
-    makeQuestion("The weather outside is frightful and the fire is", makeAnswer(["So delightful", "Uncontrollably raging through the village, it’s power knowing no bounds."], 2)),
+    makeQuestion("What kind of sauce do you have at Christmas dinner?", makeAnswer(["Bread sauce", "Curry sauce"], 1)),
+    makeQuestion("Baby Jesus was born in", makeAnswer(["A stable", "A world-renowned ICU unit"], 1)),
+    makeQuestion("Bono is famous for bellowing what line in a Christmas song?", makeAnswer(["‘AND TONIGHT THANK GOD IT’S THEM INSTEAD OF YOUUU’", "‘The John Lewis adverts do not translate, culturally, in the sub saharan continent’"], 1)),
+    makeQuestion("Baby if you’ve got to go away...", makeAnswer(["I don’t think I can take the pain, won’t you stay another day? ", "Could you please take the bins out?"], 1)),
+    makeQuestion("Last year George Michael gave you what?", makeAnswer(["His Heart.", "His famous Festive Reacharound"], 1)),
+    makeQuestion("Mulled Wine is made of", makeAnswer(["Red Wine, Spices and Fruit", "Tatties, Lemon Essence and an old shoe"], 1)),
+    makeQuestion("If Christmas was in fact ‘everyday’ as Wizzard proposed, Would it be", makeAnswer(["A wondrous thing, full of hope and happiness", "A logistical, and financially crippling, nightmare that would bring an end to society as we know it."], 1)),
+    makeQuestion("What tows Santa’s sleigh", makeAnswer(["A special Christmas horse", "Magical flying Christmas Reindeer"], 2)),
+    makeQuestion("The weather outside is frightful and the fire is", makeAnswer(["So delightful", "Uncontrollably raging through the village, it’s power knowing no bounds."], 1)),
     makeQuestion("All Mariah Carey wants for Christmas is", makeAnswer(["A better world for the next generation.", "You. Whoever you are."], 2)),
-    makeQuestion("The Sticky Bandits are", makeAnswer(["The baddies in Home Alone 2", "The band the Beatles could’ve been."], 2)),
-    makeQuestion("Rudolph’s Red Nose", makeAnswer(["Guides him home", "Is a sign of chronic-alcoholism"], 2)),
+    makeQuestion("The Sticky Bandits are", makeAnswer(["The baddies in Home Alone 2", "The band the Beatles could’ve been."], 1)),
+    makeQuestion("Rudolph’s Red Nose", makeAnswer(["Guides him home", "Is a sign of chronic-alcoholism"], 1)),
     makeQuestion("What does The Queen do on Christmas Day?", makeAnswer(["Get up early, open some presents, get the dinner on, eat at a weird time, pass out in front of the TV early on, wake up again, eat some cheese then call it a day.", "A speech. "], 2))
 ]
 
@@ -90,6 +90,7 @@ function animateIntro() {
     setTimeout(function () {
         $(".text-intro").addClass("hide");
         $(".question-container").removeClass("hide").fadeIn(400);
+        $(".text-container").addClass("text-question-container");
     }, 8000)
 }
 
