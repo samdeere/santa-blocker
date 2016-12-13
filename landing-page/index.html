@@ -91,10 +91,18 @@
 
                     </div>
                     <div class="col-xs-3">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=blitzn.io&title=Blitzn&display=popup&width=300&height=300" class="facebook"
+                        <div class="hidden-sm hidden-md hidden-lg">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=blitzn.io&title=Blitzn&display=popup&width=300&height=300" class="facebook"
                             target="_blank">
                             <img src="/images/facebook.png" class="img-responsive pull-right" />
                         </a>
+                        </div>
+                         <div class="hidden-xs">
+                            <a class="facebook share-on-facebook"
+                            target="_blank" onclick="shareOnFacebook()">
+                            <img src="/images/facebook.png" class="img-responsive pull-right" />
+                        </a>
+                        </div>
                     </div>
                     <div class="col-xs-3">
                         <a href="https://twitter.com/intent/tweet?status=Blitzn by Studio Something http://blitzn.io" class="twitter" target="_blank">
@@ -122,6 +130,8 @@
   ga('send', 'pageview');
 
 </script>
+
+ <script src="scripts/sharing.js" type=""></script>
 
 </body>
 
