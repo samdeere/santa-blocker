@@ -70,13 +70,12 @@
    background-size: 100%;
    width: 10%;
    position: absolute;
-    height: 50px;
+    height: 100px;
     background-repeat: no-repeat;
     top: 20px;
     right: 20px;
 }
-
-.santa {
+/*
     background-image: url('chrome-extension://__MSG_@@extension_id__/assets/santa-scaled.gif');
     background-repeat: no-repeat;
     height: 100%;
@@ -85,6 +84,18 @@
     width: 22%;
     left: 40%;
     top: -10%;
+*/
+.santa {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/santa-scaled.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 
 @-webkit-keyframes animatedBackground{

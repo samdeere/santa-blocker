@@ -4,7 +4,7 @@ function shareOnFacebook() {
 }
 
 function shareOnTwitter() {
-    var tweet = "Blitzn by Studio Something";
+    var tweet = "Blitzn, the chrome extension that keeps the magic of Christmas alive. Install it now at ";
     var url = "http://blitzn.io";
     var twitterUrl = "https://twitter.com/intent/tweet?text="+ encodeURIComponent(tweet + " " + url) + "&related=s0methingsays";
     window.open(twitterUrl, "Tweet", "location=0,status=0,width=800,height=650");
