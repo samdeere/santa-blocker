@@ -154,11 +154,11 @@
 
 .intro-2 {
     color: rgb(236, 71, 74) !important;
-    width: 300px !important;
     background-color: rgb(254, 236, 237) !important;
-    padding: 5px !important;
     border-radius: 12px !important;
     margin: 0 auto !important;
+    width: 400px !important;
+    padding: 9px !important;
 }
 
 .intro-3 {

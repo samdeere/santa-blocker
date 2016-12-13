@@ -59,7 +59,7 @@ var questions = [
     makeQuestion("According to Tito, Jackie and the rest of the troops, where is Santa coming to?", makeAnswer(["Town.", "An iMax near you soon."], 1)),
     makeQuestion("‘Planes, Trains and Automobiles’ is the hilarious misadventures of two unlikely friends as they set out to...", makeAnswer(["Get home to their families for Christmas.", "Broker a peace deal in the middle east, against a backdrop of speaking only conversational Arabic."], 1)),
     makeQuestion("What did Rudolph think about the fact that he couldn’t play Reindeer Games?", makeAnswer(["Sadness.", "Honestly, couldn’t give two carrots, what even are ‘Reindeer Games’ anyway?"], 1)),
-    makeQuestion("I’m on my way to Middlesbrough in a Mini, the road ahead is...", makeAnswer(["Clear as day.", "Top to Toe in Tailbacks."], 1)),
+    makeQuestion("I’m on my way to Middlesbrough in a Mini, the road ahead is...", makeAnswer(["Clear as day.", "Top to Toe in Tailbacks."], 2)),
     makeQuestion("", makeAnswer(["", ""], 2))
 ]
 
@@ -100,9 +100,9 @@ function animateIntro() {
     $(".intro-3").delay(6000).fadeIn(400);
 
     setTimeout(function () {
-        $(".text-intro").addClass("hide");
-        $(".question-container").removeClass("hide").fadeIn(400);
-        $(".text-container").addClass("text-question-container");
+       // $(".text-intro").addClass("hide");
+       // $(".question-container").removeClass("hide").fadeIn(400);
+       // $(".text-container").addClass("text-question-container");
     }, 8000)
 }
 
