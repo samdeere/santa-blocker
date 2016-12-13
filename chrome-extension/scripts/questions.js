@@ -98,12 +98,13 @@ function animateIntro() {
     $(".ho-3").delay(3000).fadeIn(400);
     $(".intro-2").delay(4000).fadeIn(400);
     $(".intro-3").delay(6000).fadeIn(400);
+    $(".start-questions").delay(8000).fadeIn(400);
 
-    setTimeout(function () {
-       // $(".text-intro").addClass("hide");
-       // $(".question-container").removeClass("hide").fadeIn(400);
-       // $(".text-container").addClass("text-question-container");
-    }, 8000)
+     $(".start-questions").click(function () {
+        $(".text-intro").addClass("hide");
+        $(".question-container").removeClass("hide").fadeIn(400);
+        $(".text-container").addClass("text-question-container");
+    });
 }
 
 function setCurrentQuestion() {
