@@ -23,7 +23,6 @@ var christmasList = [
     'christmas',
     'december 25',
     'eggnog',
-    'elves',
     'feliz navidad',
     'festive',
     'frosty',
