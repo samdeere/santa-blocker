@@ -42,7 +42,19 @@ var christmasList = [
     'sleigh',
     'snow',
     'xmas',
-    'yule'
+    'yule',
+    'afishapa',
+    'noël',
+    'Gleðileg jól',
+    'buon natale',
+    'god jul',
+    'Wesołych Świąt',
+    'nadolig llawen',
+    'frohe weihnachten',
+    'weihnachtsmann',
+    'babbo natale',
+    'papa noel',
+    'père noël'
 ]
 
 var christmasListRegex = new RegExp(christmasList.join('|'), 'i')
